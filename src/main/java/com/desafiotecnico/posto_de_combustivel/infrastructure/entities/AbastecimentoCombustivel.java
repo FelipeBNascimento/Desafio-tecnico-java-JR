@@ -2,10 +2,7 @@ package com.desafiotecnico.posto_de_combustivel.infrastructure.entities;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
@@ -17,6 +14,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 //Essa anotação cria construtores com todos os parâmetros
 @AllArgsConstructor
+//Anotação Builder para usar nos metodos para atualizar
+@Builder
 
 //Essa anotação monstra para o spring que é uma tabela
 @Entity

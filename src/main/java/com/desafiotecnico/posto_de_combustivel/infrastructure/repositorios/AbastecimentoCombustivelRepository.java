@@ -1,5 +1,6 @@
 package com.desafiotecnico.posto_de_combustivel.infrastructure.repositorios;
 
+import com.desafiotecnico.posto_de_combustivel.infrastructure.entities.AbastecimentoCombustivel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -7,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 // Extende a classe JpaRepository para usar varios metodos implementados
-public interface AbastecimentoCombustivel extends JpaRepository<AbastecimentoCombustivel, Long> {
+public interface AbastecimentoCombustivelRepository extends JpaRepository<AbastecimentoCombustivel, Long> {
 }

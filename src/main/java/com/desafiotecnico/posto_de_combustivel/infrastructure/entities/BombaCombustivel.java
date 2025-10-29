@@ -3,10 +3,7 @@ package com.desafiotecnico.posto_de_combustivel.infrastructure.entities;
 // Anotações do lombok
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 // Essa anotação cria automático os métodos getters para os atributos
 @Getter
@@ -16,6 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 //Essa anotação cria construtores com todos os parâmetros
 @AllArgsConstructor
+//Anotação Builder para usar nos metodos para atualizar
+@Builder
 
 //Essa anotação monstra para o spring que é uma tabela
 @Entity
