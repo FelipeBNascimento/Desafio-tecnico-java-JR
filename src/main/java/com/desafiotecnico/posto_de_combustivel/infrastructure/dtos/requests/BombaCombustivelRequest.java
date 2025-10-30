@@ -14,9 +14,10 @@ import lombok.*;
 //Anotação Builder para usar nos metodos para atualizar
 @Builder
 
-// Classe para fazer request (DTO) usamos para fazer a interação com banco sem usar a entities
+// Classe request (DTO) usamos para não fazer a interação direto com banco
 public class BombaCombustivelRequest {
 
+    // Só atributos que o cliente passe
     private String nome;
     private TipoCombustivel tipoCombustivel;
 }
