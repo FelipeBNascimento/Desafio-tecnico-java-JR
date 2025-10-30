@@ -44,9 +44,9 @@ public class AbastecimentoCombustivel {
     private Double litragem;
 
     // Anotação para fazer a ligação das tabelas
-    //A anotação OneToONe significa que um abastecimento por bomba
-    @OneToOne
-    @JoinColumn(name = "id_bomba")
+    //A anotação ManyToOne significa que varios abastecimentos por uma bomba
+    @ManyToOne
+    @JoinColumn(name = "id_bomba", nullable = false)
     private BombaCombustivel bombaCombustivel;
 
 }
