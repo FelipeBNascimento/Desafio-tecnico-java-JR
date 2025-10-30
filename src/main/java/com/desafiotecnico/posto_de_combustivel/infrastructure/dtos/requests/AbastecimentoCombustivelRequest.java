@@ -16,9 +16,10 @@ import java.time.LocalDate;
 //Anotação Builder para usar nos metodos para atualizar
 @Builder
 
-// Classe para fazer request (DTO) usamos para fazer a interação com banco sem usar a entities
+// Classe request (DTO) usamos para não fazer a interação direto com banco
 public class AbastecimentoCombustivelRequest {
 
+    // Só atributos que o cliente passe
     private Double quantidade_valores;
     private Double litragem;
     private BombaCombustivel bombaCombustivel;

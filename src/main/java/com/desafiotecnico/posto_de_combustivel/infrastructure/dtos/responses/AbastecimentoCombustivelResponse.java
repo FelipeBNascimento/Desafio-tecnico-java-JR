@@ -17,9 +17,10 @@ import java.time.LocalDate;
 //Anotação Builder para usar nos metodos para atualizar
 @Builder
 
-// Classe para fazer response (DTO) usamos para fazer a interação com banco sem usar a entities
+// Classe response (DTO) usamos para não fazer a interação direto com banco
 public class AbastecimentoCombustivelResponse {
 
+    // Atributo somente para visualização
     private Long id;
     private LocalDate data;
     private Double quantidade_valores;

@@ -9,9 +9,16 @@ import com.desafiotecnico.posto_de_combustivel.infrastructure.dtos.responses.Tip
 import com.desafiotecnico.posto_de_combustivel.infrastructure.entities.AbastecimentoCombustivel;
 import com.desafiotecnico.posto_de_combustivel.infrastructure.entities.BombaCombustivel;
 import com.desafiotecnico.posto_de_combustivel.infrastructure.entities.TipoCombustivel;
+import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
+//
+@Component
 public class Converter {
 
+    //metodo para converter classe request para uma entity para manipular no banco de dados
     public TipoCombustivel paraTipoCombustivel(TipoCombustivelRequest request){
 
         TipoCombustivel combustivel = new TipoCombustivel();
@@ -20,6 +27,7 @@ public class Converter {
         return combustivel;
     }
 
+    // metodo para converter uma classeentity para uma response para visualização do cliente
     public TipoCombustivelResponse paraTipoCombustivelResponse(TipoCombustivel  entity){
 
         TipoCombustivelResponse combustivel = new TipoCombustivelResponse();
@@ -29,6 +37,7 @@ public class Converter {
         return combustivel;
     }
 
+    //metodo para converter classe request para uma entity para manipular no banco de dados
     public BombaCombustivel paraBombaCombustivel (BombaCombustivelRequest request){
 
         BombaCombustivel bombaCombustivel = new BombaCombustivel();
@@ -38,6 +47,7 @@ public class Converter {
 
     }
 
+    // metodo para converter uma classeentity para uma response para visualização do cliente
     public BombaCombustivelResponse paraBombaCombustivelResponse(BombaCombustivel entity){
 
         BombaCombustivelResponse bomba = new BombaCombustivelResponse();
@@ -48,6 +58,7 @@ public class Converter {
         return bomba;
     }
 
+    //metodo para converter classe request para uma entity para manipular no banco de dados
     public AbastecimentoCombustivel paraAbastecimentoCombustivel(AbastecimentoCombustivelRequest request){
 
         AbastecimentoCombustivel abastecimento = new AbastecimentoCombustivel();
@@ -59,6 +70,7 @@ public class Converter {
         return abastecimento;
     }
 
+    // metodo para converter uma classeentity para uma response para visualização do cliente
     public AbastecimentoCombustivelResponse paraAbastecimentoCombustivelResponse (AbastecimentoCombustivel entity){
 
         AbastecimentoCombustivelResponse abastecimento = new AbastecimentoCombustivelResponse();
@@ -70,5 +82,17 @@ public class Converter {
         abastecimento.setBombaCombustivel(entity.getBombaCombustivel());
 
         return abastecimento;
+    }
+
+    // metodo para converter uma listaentity para uma listaresponse para visualização do cliente
+    public List<TipoCombustivelResponse> ListaTipoCombustivelResponse(List<TipoCombustivel> combustiveis) {
+
+        List<TipoCombustivelResponse> combustivelResponses = new ArrayList<>();
+
+        for (TipoCombustivel combustivel : combustiveis) {
+            combustivelResponses.add(paraTipoCombustivelResponse(combustivel));
+        }
+        return combustivelResponses;
+
     }
 }
